@@ -6,7 +6,7 @@ import User from "../models/User.js";
 export const clerkWebhooks=async(req,res)=>{
     try{
         //create svix with webhook scret
-        const whook=newWebhook(process.env.CLERK_WEBHOOK_SECRET)
+        const whook=new Webhook(process.env.CLERK_WEBHOOK_SECRET)
 
 
         //verify errors
@@ -60,7 +60,7 @@ export const clerkWebhooks=async(req,res)=>{
         
 
     }catch(error){ 
-        console.log(ErrorEvent.message)
+        console.log(error.message)
         res.json({success:false,message:'Webhooks Error'})
     }
 }

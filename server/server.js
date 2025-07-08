@@ -6,6 +6,7 @@ import connectDB from './config/db.js'
 import * as Sentry from "@sentry/node";
 import { clerkWebhooks } from './controllers/webhooks.js'
 
+
 const app = express()
 //connect db
 await connectDB()
